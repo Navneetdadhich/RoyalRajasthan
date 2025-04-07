@@ -26,7 +26,7 @@ const udaipurData = [
     {
         "id": 5,
         "title": "Jagdish Temple",
-        "image": "/udaipur/jagdish.jpg",  
+        "image": "/udaipur/jagdish.jpeg",  
         
     },
     {
@@ -44,13 +44,13 @@ const udaipurData = [
     {
         "id": 8,
         "title": "Taj Lake Palace",
-        "image": "/udaipur/tajlake.jpg",  
+        "image": "/udaipur/tajlake.jpeg",  
         
     },
     { 
         "id": 9,
         "title": "Saheliyon Ki Bari",
-        "image": "/udaipur/saheli.jpg",
+        "image": "/udaipur/saheli.jpeg",
 
     },
 ];

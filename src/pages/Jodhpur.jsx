@@ -56,7 +56,7 @@ const Jodhpur = () => {
         <div className=" max-w-7xl text-center">
           <h1 className="text-3xl font-semibold mb-10">
             {" "}
-            ATTRACTIONS & PLACES TO VISIT AND EXPLORE IN JAIPUR
+            ATTRACTIONS & PLACES TO VISIT AND EXPLORE IN JODHPUR
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl lg:grid-cols-3 gap-10 ">

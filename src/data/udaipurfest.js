@@ -7,7 +7,7 @@ const udaipurfest = [
     {
         id: 2,
         name: "Shilpgram Festival",
-        image: "/udaipur/shilp.jpeg",
+        image: "/udaipur/shilp.jpg",
     },
     {
         id: 3,
