@@ -3,7 +3,7 @@ import {Search} from "lucide-react"
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="z-50">
       <nav className="navcolor p-4 border-b-4 border-rose-500">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-black text-xl font-bold flex items-center justify-center gap-4 p-1">
@@ -33,10 +33,10 @@ const Navbar = () => {
             </li>
           </ul>
 
-            <div className="flex items-center border border-black rounded-full p-2 bg-transparent gap-2 p-2">
+            {/* <div className="flex items-center border border-black rounded-full bg-transparent gap-2 p-2">
             <Search className="text-black" size={20} />
           <input type="text" placeholder="Search" className="border-transparent focus:outline-none focus:ring-0"/>
-            </div>
+            </div> */}
         </div>
       </nav>
     </div>

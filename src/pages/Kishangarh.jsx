@@ -2,7 +2,7 @@ import React from 'react'
 
 const Kishangarh = () => {
   return (
-    <div>Kishangarh</div>
+    <div className='h-screen'>Kishangarh</div>
   )
 }
 

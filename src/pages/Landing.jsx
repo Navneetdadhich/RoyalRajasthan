@@ -1,14 +1,19 @@
 import React from "react";
 import Hero from "../components/Hero";
-// import { Link } from "lucide-react";
-import { Link } from "react-router";
-// import TravelSlider from "../components/TravelSlider";
-// import { travelSlides } from "../data/travelSlides";
-// import { 1 } from "../assets/1.jpg";
+import { Link } from "react-router-dom";
+
 
 const Landing = () => {
   return (
-    <div className="bg-amber-100 w-full flex flex-col items-center justify-center">
+    <div className=" w-full flex flex-col items-center justify-center ">
+      <img src="/Mandala.png" alt="" className="absolute opacity-30 -top-10 -left-15" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-140 -right-15" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-240 -left-10" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-320 -right-40 h-130" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-530 -left-50 h-130" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-700 -right-30 h-100" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-738 -left-4 h-80" />
+    <img src="/Mandala.png" alt="" className="absolute opacity-30 top-901 right-6 h-60" />
       <div className="w-full max-w-7xl mx-auto ">
         <Hero />
       </div>
@@ -25,9 +30,12 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">
+            <div className="absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center">
+              <p className="text-amber-100 text-2xl font-semibold">
                 Chittorgarh
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              A majestic fort echoing heroic legends.
               </p>
             </div>
           </Link>
@@ -40,10 +48,15 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Jaipur</p>
+            <div className="absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center px-20">
+              <p className="text-amber-100 text-2xl font-semibold">
+                Jaipur
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              Royal elegance wrapped in pink hues. Jaipur is Rajasthan’s capital and part of India’s famous Golden Triangle tourist route. Known as the Pink City for its blush-colored buildings, it was meticulously planned in the 18th century. The city balances royal splendor and modern hustle with majestic landmarks like Hawa Mahal, Amber Fort, and City Palace.
+              </p>
             </div>
-          {/* </div> */}
+          
               </Link>
 
           <Link to="/jaisalmer" className="col-span-1 sm:col-span-2 md:col-span-1 h-56 md:h-64 bg-red-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
@@ -52,8 +65,13 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Jaisalmer</p>
+            <div className="absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center">
+              <p className="text-amber-100 text-2xl font-semibold">
+                Jaisalmer
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              Golden sands whispering ancient desert stories.
+              </p>
             </div>
           </Link>
 
@@ -63,8 +81,13 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Udaipur</p>
+            <div className="absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center">
+              <p className="text-amber-100 text-2xl font-semibold">
+                Udaipur
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              City of lakes, romance, and royalty. Nestled between the Aravalli hills, Udaipur is often referred to as the Venice of the East. It's dotted with serene lakes like Lake Pichola and Fateh Sagar.
+              </p>
             </div>
           </Link>
 
@@ -74,8 +97,13 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Jodhpur</p>
+            <div className="absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center">
+              <p className="text-amber-100 text-2xl font-semibold">
+                Jodhpur
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              Blue city guarding tales of valor.
+              </p>
             </div>
           </Link>
           <Link to="/kishangarh" className="col-span-1 sm:col-span-2 md:col-span-2 h-56 md:h-64 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
@@ -84,8 +112,13 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Kishangarh</p>
+            <div className=" absolute inset-0 bg-black/60 flex flex-col gap-2 items-center justify-center opacity-100 transition-opacity duration-200 p-4 text-center">
+              <p className="text-amber-100 text-2xl font-semibold">
+                Kishangarh
+              </p>
+              <p className="text-amber-100 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              Artistic charm with miniature painting heritage. Kishangarh is a small yet culturally rich town known for its exquisite miniature paintings, especially the Bani Thani style, often called the "Mona Lisa of India."
+              </p>
             </div>
           </Link>
         </div>

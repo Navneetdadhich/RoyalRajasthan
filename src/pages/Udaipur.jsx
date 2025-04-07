@@ -2,7 +2,7 @@ import React from 'react'
 
 const Udaipur = () => {
   return (
-    <div>Udaipur</div>
+    <div className='h-screen'>Udaipur</div>
   )
 }
 

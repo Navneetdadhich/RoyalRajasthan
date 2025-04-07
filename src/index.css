@@ -5,6 +5,11 @@
 /* @import "tailwindcss/components";
 @import "tailwindcss/utilities"; */
 
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
