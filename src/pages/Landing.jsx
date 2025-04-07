@@ -289,7 +289,7 @@ const Landing = () => {
       <div className="w-full h-screen max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center">
         <div className="w-full h-full grid grid-cols-3 grid-rows-2 gap-4 p-2">
           {/* 1 */}
-          <div className="col-span-3 row-span-1 bg-orange-400 rounded-3xl flex flex-col gap-10 items-center justify-center text-xl overflow-hidden font-semibold relative group  shadow-lg">
+          <div className="col-span-3 row-span-1 bg-orange-400 rounded-3xl flex flex-col gap-10 items-center justify-center text-xl overflow-hidden font-semibold relative group  shadow-lg border-2 border-yellow-700">
             <div className="flex flex-col items-center justify-center gap-3">
               <h1 className="text-5xl font-semibold">
                 Not Sure Where To Start?
@@ -300,13 +300,13 @@ const Landing = () => {
               </p>
             </div>
 
-            <button className="bg-amber-100 text-yellow-700 p-3 w-50 rounded-full hover:bg-amber-200 transition duration-300 shadow-xl cursor-pointer">
+            <button className="bg-amber-100 border-2 border-yellow-700 text-yellow-700 p-3 w-50 rounded-full hover:bg-amber-200 transition duration-300  cursor-pointer">
               Plan Your Trip
             </button>
           </div>
 
           {/* 2 */}
-          <div className="col-span-2 row-span-1 bg-amber-300 rounded-3xl flex flex-row p-20 items-center justify-between text-xl font-semibold overflow-hidden relative group  shadow-lg">
+          <div className="col-span-2 row-span-1 bg-amber-300 rounded-3xl flex flex-row p-20 items-center justify-between text-xl font-semibold overflow-hidden relative group  shadow-lg border-2 border-yellow-700" >
             <div className="flex flex-col justify-center gap-2 p-5 w-100">
               <h1 className="text-4xl font-semibold">About us</h1>
               <p className="text-lg text-justify">
@@ -319,7 +319,7 @@ const Landing = () => {
             <img src="/turbanman.png" alt="" className="h-80" />
           </div>
 
-          <div className="col-span-1 row-span-1 bg-rose-500 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group shadow-lg">
+          <div className="col-span-1 row-span-1 bg-rose-500 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group shadow-lg border-2 border-yellow-700">
             <div className="flex flex-col items-center justify-center gap-5 p-2 w-100">
               <h1 className="text-3xl font-semibold">
                 Step Into the Royal Journey

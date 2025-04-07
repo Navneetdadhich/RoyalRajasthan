@@ -9,6 +9,8 @@ import Udaipur from "./pages/Udaipur";
 import Kishangarh from "./pages/Kishangarh";
 import Chittorgarh from "./pages/Chittorgarh";
 import Footer from "./components/Footer";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
  
@@ -28,6 +30,8 @@ const HomeLayout = () => (
           
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Landing />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="jaipur" element={<Jaipur />} />
           <Route path="jodhpur" element={<Jodhpur />} />
           <Route path="jaisalmer" element={<Jaisalmer />} />

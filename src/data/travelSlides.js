@@ -21,23 +21,23 @@ export const travelSlides = [
   },
   {
     id: 3,
-title: "Experience Serenity in Pushkar",
-location: "Pushkar, Rajasthan",
-description:
-  "Discover the spiritual charm of Pushkar with its sacred lake, vibrant bazaars, ancient temples, and the world-famous Pushkar Camel Fair.",
-backgroundImage:
-  "https://plus.unsplash.com/premium_photo-1718570256515-8ff542703621?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-buttonText: "Explore Now",
+    title: "Experience Serenity in Pushkar",
+    location: "Pushkar, Rajasthan",
+    description:
+      "Discover the spiritual charm of Pushkar with its sacred lake, vibrant bazaars, ancient temples, and the world-famous Pushkar Camel Fair.",
+    backgroundImage:
+      "https://plus.unsplash.com/premium_photo-1718570256515-8ff542703621?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    buttonText: "Explore Now",
   },
   {
     id: 4,
-title: "Explore the Golden City",
-location: "Jaisalmer, Rajasthan",
-description:
-  "Uncover the magic of the Thar Desert with golden sandstone forts, camel safaris, and the rich cultural heritage of Jaisalmer's ancient streets.",
-backgroundImage:
-  "https://images.unsplash.com/photo-1600871215197-c68059ada01a?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-buttonText: "Explore Now",
+    title: "Explore the Golden City",
+    location: "Jaisalmer, Rajasthan",
+    description:
+      "Uncover the magic of the Thar Desert with golden sandstone forts, camel safaris, and the rich cultural heritage of Jaisalmer's ancient streets.",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1600871215197-c68059ada01a?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    buttonText: "Explore Now",
   },
   {
     id: 5,

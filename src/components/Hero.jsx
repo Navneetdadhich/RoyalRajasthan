@@ -4,7 +4,7 @@ import TravelSlider from './TravelSlider';
 
 const Hero = () => {
   return (
-    <div className='flex flex-col items-center justify-center z-50'>
+    <div className='flex flex-col items-center justify-center py-10 z-50'>
       
 
       <TravelSlider slides={travelSlides}/> 
