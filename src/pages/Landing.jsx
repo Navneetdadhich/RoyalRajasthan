@@ -14,7 +14,7 @@ const Landing = () => {
     <img src="/Mandala.png" alt="" className="absolute opacity-30 top-700 -right-30 h-100" />
     <img src="/Mandala.png" alt="" className="absolute opacity-30 top-738 -left-4 h-80" />
     <img src="/Mandala.png" alt="" className="absolute opacity-30 top-901 right-6 h-60" />
-      <div className="w-full max-w-7xl mx-auto ">
+      <div className="w-full mx-auto">
         <Hero />
       </div>
 
@@ -139,8 +139,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">
                 Palace on wheels
               </p>
             </div>
@@ -153,8 +153,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Museums</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Museums</p>
             </div>
           </div>
 
@@ -164,8 +164,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">
                 Authentic Food
               </p>
             </div>
@@ -177,8 +177,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Festivals</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Festivals</p>
             </div>
           </div>
 
@@ -188,8 +188,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Fairs</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Fairs</p>
             </div>
           </div>
 
@@ -199,8 +199,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Wildlife</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Wildlife</p>
             </div>
           </div>
 
@@ -210,8 +210,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">
                 Cultural Dance
               </p>
             </div>
@@ -234,8 +234,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Desert</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Desert</p>
             </div>
           </div>
 
@@ -246,8 +246,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Food</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Food</p>
             </div>
           </div>
 
@@ -257,8 +257,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Nature</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Nature</p>
             </div>
           </div>
 
@@ -268,8 +268,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Culture</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Culture</p>
             </div>
           </div>
 
@@ -279,8 +279,8 @@ const Landing = () => {
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-xl font-semibold">Heritage</p>
+            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
+              <p className="text-amber-100 text-2xl font-semibold">Heritage</p>
             </div>
           </div>
         </div>

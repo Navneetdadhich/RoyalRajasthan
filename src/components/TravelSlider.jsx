@@ -52,9 +52,9 @@ const TravelSlider = ({ slides, autoPlayInterval = 5000 }) => {
   }, [currentIndex, isAutoPlaying, autoPlayInterval, goToNext]);
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] relative z-50">
+    <div className="w-full h-[600px] relative z-50">
       {/* Slider container */}
-      <div className="slider-container w-full h-full rounded-2xl overflow-hidden">
+      <div className="slider-container w-full h-full  overflow-hidden">
         {/* Slides */}
         {slides.map((slide, index) => (
           <div
