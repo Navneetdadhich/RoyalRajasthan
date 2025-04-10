@@ -83,7 +83,7 @@ body{
 }
 
 .navcolor{
-  background-color: #ffe15c;
+  background-color: #ffe15c5e;
 }
 
 .slider-pattern {
@@ -155,4 +155,48 @@ body{
 
 .fade-in {
   animation: fadeIn 0.5s ease-in forwards;
+}
+
+
+.rajasthani-button {
+   /* relative font-bold text-center py-2 px-8 
+  text-black bg-cream border-2 
+  rounded-full transition-all duration-200
+  hover:bg-cream/90 hover:shadow-sm */
+  /* active:scale-95; */
+  display: inline-block;
+  min-width: 120px;
+  position: relative;
+  overflow: visible;
+}
+
+.rajasthani-button::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed #ec4899;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.rajasthani-button::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid #ec4899;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.3;
+  background: linear-gradient(45deg, transparent 48%, #ec4899 49%, #ec4899 51%, transparent 52%);
+  background-size: 8px 8px;
+  background-repeat: repeat;
+  z-index: 0;
+  filter: blur(0.5px);
 }

@@ -1,53 +1,54 @@
 import React, { useState } from "react";
 import { Plane, RailSymbol, Bus } from "lucide-react";
 
-import kishangarhData from "/src/data/kishangarhData.js";
-import kishangarhfest from "/src/data/kishangarhfest.js";
+import AjmerData from "/src/data/ajmerData.js";
+import Ajmerfest from "/src/data/ajmerfest.js";
 
-const Kishangarh = () => {
+const Ajmer = () => {
   const [elements, setElements] = useState(3);
 
-  const sliceData = kishangarhData.slice(0, elements);
+  const sliceData = AjmerData.slice(0, elements);
   const handleSeeMore = () => {
     setElements(elements + 3);
   };
   return (
     <>
-      <div className=" w-full flex flex-col justify-center items-center bg-blue-200 ">
+      <div className=" w-full flex flex-col justify-center items-center bg-green-100 ">
         <div className="">
-          <img src="/jodhpur/main.jpg" alt="" className="" />
+          <img src="/ajmer/a1.jpg" alt="" className="" />
         </div>
         <div className="h-screen w-full text-center flex flex-col justify-center items-center relative overflow-hidden">
           <div className="max-w-6xl flex flex-col justify-center items-center gap-4 p-10 z-50">
-            <h1 className="text-7xl mb-5">KISHANGARH</h1>
-            <p className="text-4xl">The Pink City of Royal Elegance</p>
+            <h1 className="text-7xl mb-5">AJMER</h1>
+            <p className="text-4xl">
+              The Heart of Sufi Soul and Royal Heritage
+            </p>
             <p className="text-2xl">
               {" "}
-              Jaipur, famously known as The Pink City, is the vibrant capital of
-              Rajasthan that beautifully blends royal heritage with modern
-              charm. Established in 1727 by Maharaja Sawai Jai Singh II, Jaipur
-              is India’s first planned city, known for its symmetrical layout
-              and iconic terracotta-pink buildings. The city is a treasure trove
-              of architectural wonders — from the delicate windows of Hawa Mahal
-              to the hilltop grandeur of Amer Fort, and the celestial precision
-              of Jantar Mantar to the regal elegance of the City Palace. Every
-              monument speaks of a glorious past and offers a glimpse into the
-              opulence of Rajputana history. Beyond its historical landmarks,
-              Jaipur is alive with color, culture, and craft. Traditional
-              bazaars bustle with artisans selling block prints, blue pottery,
-              and silver jewelry, while street food stalls serve up spicy
-              kachoris and sweet ghewar. The city’s spirit shines brightest
-              during its festivals — be it the lively Teej, dazzling Diwali, or
-              the globally renowned Jaipur Literature Festival. Whether you’re
-              exploring hidden alleys, watching the sunset from Nahargarh Fort,
-              or simply soaking in the city’s warm hospitality, Jaipur promises
-              an experience full of wonder, tradition, and unforgettable
-              memories.
+              Ajmer is a historic and spiritual city nestled in the heart of
+              Rajasthan, known for its rich heritage, vibrant culture, and
+              religious harmony. Surrounded by the Aravalli hills, the city
+              holds deep significance for both Hindus and Muslims. It is best
+              known for the Ajmer Sharif Dargah, the revered shrine of the Sufi
+              saint Khwaja Moinuddin Chishti, which attracts millions of
+              devotees from all over the world. Alongside its spiritual charm,
+              Ajmer boasts serene lakes like Ana Sagar, impressive forts, Mughal
+              architecture, and beautiful temples. Adding to its cultural
+              allure, Ajmer is also a gateway to the holy town of Pushkar, just
+              a short drive away. The city offers a perfect blend of tradition
+              and tranquility, with bustling markets, peaceful gardens, and
+              historical landmarks that reflect centuries of diverse influences.
+              Whether you're a spiritual seeker, history lover, or cultural
+              explorer, Ajmer promises a soulful and memorable experience. Its
+              warm hospitality, colorful festivals, and delicious Rajasthani
+              cuisine add even more charm to your journey. From sunrise prayers
+              to sunset views over the lake, Ajmer leaves a lasting impression
+              on every traveler.
             </p>
           </div>
           {/* <img src="/jaipur/mandal.png" alt="" className="absolute opacity-30 -bottom-40 h-80"/> */}
           <img
-            src="/jodhpur/mandal.png"
+            src="/ajmer/mandal.png"
             alt=""
             className="absolute opacity-30 -top-40 h-80"
           />
@@ -56,7 +57,7 @@ const Kishangarh = () => {
         <div className=" max-w-7xl text-center">
           <h1 className="text-3xl font-semibold mb-10">
             {" "}
-            ATTRACTIONS & PLACES TO VISIT AND EXPLORE IN KISHANGARH
+            ATTRACTIONS & PLACES TO VISIT AND EXPLORE IN AJMER
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl lg:grid-cols-3 gap-10 ">
@@ -74,7 +75,7 @@ const Kishangarh = () => {
               </div>
             ))}
           </div>
-          {elements < kishangarhData.length && (
+          {elements < AjmerData.length && (
             <div className="flex justify-center items-center p-10">
               <button
                 onClick={handleSeeMore}
@@ -90,7 +91,7 @@ const Kishangarh = () => {
           <h1 className="text-3xl font-semibold mb-10"> FESTIVALS & EVENT</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl lg:grid-cols-2 gap-4 ">
-            {kishangarhfest.map((item, id) => (
+            {Ajmerfest.map((item, id) => (
               <div
                 className="flex flex-col justify-center items-center gap-4 rounded-2xl overflow-hidden border-orange-300"
                 key={id}
@@ -106,19 +107,20 @@ const Kishangarh = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl text-center flex flex-row gap-10 bg-blue-400 border-2 border-yellow-700 justify-center items-center  my-5 rounded-2xl p-10 shadow-lg">
-          <img src="/jodhpur/jodhmap.png" alt="" className="h-160" />
+        <div className="max-w-7xl text-center flex flex-row gap-10 bg-green-200 border-2 border-yellow-700 justify-center items-center  my-5 rounded-2xl p-10 shadow-lg">
+          <img src="/ajmer/ajmermapp.png" alt="" className="h-160" />
 
           <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10">
-            <h1 className="text-3xl font-semibold mb-5">How to Reach Kishangarh</h1>
+            <h1 className="text-3xl font-semibold mb-5">How to Reach Ajmer</h1>
             <hr className="bg-black w-full" />
             <div className="flex justify-center items-center gap-4 ">
               <Plane className="h-40 w-40 text-black" />
               <p>
                 {" "}
-                Jodhpur Airport (JDH) is located about 5 km from the city center
-                and operates regular domestic flights. It has regular domestic
-                flights from cities like Delhi, Mumbai, Jaipur, Udaipur.{" "}
+                The nearest airport is Kishangarh Airport (KQH), about 30 km
+                from Ajmer, with direct flights from cities like Delhi and
+                Mumbai. Alternatively, Jaipur International Airport (135 km
+                away) is the better-connected option.{" "}
               </p>
             </div>
             <hr className="bg-black w-full" />
@@ -126,10 +128,11 @@ const Kishangarh = () => {
               <RailSymbol className="h-40 w-40 text-black" />
               <p>
                 {" "}
-                Jodhpur Junction is a major railway station on the Indian
-                Railways network. Several express and superfast trains like
-                Surynagri, Mandore Express, Rajasthan Sampark Kranti and Howrah
-                - Jodhpur{" "}
+                Ajmer Junction is a major railway station and is well connected
+                to all major cities like Delhi, Jaipur, Mumbai, Ahmedabad,
+                Kolkata, and more. Several superfast and express trains such as
+                Shatabdi Express, Garib Rath, Ajmer Express, etc., operate
+                daily.{" "}
               </p>
             </div>
             <hr className="bg-black w-full" />
@@ -137,9 +140,9 @@ const Kishangarh = () => {
               <Bus className="h-40 w-40 text-black" />
               <p>
                 {" "}
-                Jodhpur is well-connected by national highways. Regular buses
+                Ajmer is well-connected by national highways. Regular buses
                 (including Volvo, deluxe, and sleeper options) run by RSRTC and
-                private operators are available from nearby cities{" "}
+                private operators are available from nearby cities.{" "}
               </p>
             </div>
           </div>
@@ -148,5 +151,4 @@ const Kishangarh = () => {
     </>
   );
 };
-
-export default Kishangarh;
+export default Ajmer;

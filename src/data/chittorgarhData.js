@@ -1,64 +1,59 @@
 const chittorgarhData = [ 
     {
         "id": 1,
-        "title": "Hawa Mahal",
-        "image": "/jaipur/hm.jpg",  
+        "title": "Chittorgarh Fort",
+        "image": "/chittor/c2.jpg",  
         
     },  
     {
         "id": 2,
-        "title": "City Park",
-        "image": "/jaipur/cityp.jpg",  
+        "title": "Meerabai Temple",
+        "image": "/chittor/c3.jpeg",  
         
     },
     {
         "id": 3,
-        "title": "Amber Fort",
-        "image": "/jaipur/af.jpg",  
+        "title": "Gaumukh Temple",
+        "image": "/chittor/c4.jpg",  
         
     },
     {
         "id": 4,
-        "title": "Jantar Mantar",
-        "image": "/jaipur/jm.jpg",  
+        "title": "Rani Padmini Palace",
+        "image": "/chittor/c5.jpeg",  
         
     },
     {
         "id": 5,
-        "title": "Nahargarh Fort",
-        "image": "/jaipur/naf.jpg",  
+        "title": "Jauhar Sthal",
+        "image": "/chittor/c6.webp",  
         
     },
     {
         "id": 6,    
-        "title": "Govind Devi Temple",
-        "image": "/jaipur/gdt.jpg",
+        "title": "Kalika Mata Temple",
+        "image": "/chittor/c7.jpg",
 
     },
     {
         "id": 7,
-        "title": "Albert Hall Museum",
-        "image": "/jaipur/albert.jpg",  
+        "title": "Bassi Wildlife Sanctuary",
+        "image": "/chittor/c8.jpg",  
         
     },
     {
         "id": 8,
-        "title": "Birla Temple",
-        "image": "/jaipur/birt.jpg",  
+        "title": "Sanwaliyaji Temple",
+        "image": "/chittor/c9.jpg",  
         
     },
     { 
         "id": 9,
-        "title": "Galtaji Temple",
-        "image": "/jaipur/galta.jpg",
+        "title": "Menal Fort",
+        "image": "/chittor/c10.jpg",
 
     },
-    {
-        "id": 10,
-        "title": "Jal Mahal",
-        "image": "/jaipur/jalm.jpg",  
-        
-    },
+    
 
 ];
 

@@ -13,36 +13,34 @@ const Jaisalmer = () => {
   };
   return (
     <>
-      <div className=" w-full flex flex-col justify-center items-center bg-yellow-50">
+      <div className=" w-full flex flex-col justify-center items-center bg-yellow-100">
         <div className="">
-          <img src="/udaipur/main.jpg" alt="" className="" />
+          <img src="/chittor/ch1.jpg" alt="" className="" />
         </div>
         <div className="h-screen w-full text-center flex flex-col justify-center items-center relative overflow-hidden">
           <div className="max-w-6xl flex flex-col justify-center items-center gap-4 p-10 z-50">
             <h1 className="text-7xl mb-5">CHITTORGARH</h1>
-            <p className="text-4xl">The City of Lakes</p>
+            <p className="text-4xl">The Land of Courage and Glory</p>
             <p className="text-2xl">
               {" "}
-              Often referred to as the "City of Lakes," Udaipur is one of the
-              most enchanting destinations in India, known for its tranquil
-              waters, romantic ambiance, and regal charm. Located in southern
-              Rajasthan, Udaipur is surrounded by the Aravalli hills and boasts
-              several stunning lakes, including Lake Pichola, Fateh Sagar, and
-              Udai Sagar. The city is famed for its spectacular palaces and
-              intricate architecture—most notably the Lake Palace, seemingly
-              floating on Lake Pichola, and the City Palace, a sprawling complex
-              that beautifully blends Rajasthani and Mughal design. With vibrant
-              bazaars, cultural performances, and peaceful boat rides, Udaipur
-              offers a magical experience that feels like stepping into a royal
-              era. Historically, Udaipur was founded in 1559 by Maharana Udai
-              Singh II, the ruler of the Mewar kingdom. After the threat of
-              Mughal invasion in Chittorgarh, he moved his capital to the lush
-              Girwa Valley and established Udaipur. The city became a stronghold
-              of Rajput resistance against Mughal rule, known for the valor and
-              independence of its rulers. Today, its legacy is reflected in the
-              grand palaces, museums, and traditions that keep the Rajputana
-              spirit alive, making it a must-visit for history lovers and
-              cultural explorers alike
+              Chittorgarh, located in the southern part of Rajasthan, is one of
+              the most historically significant cities in India. Once the
+              capital of the Mewar Kingdom, it is renowned for its grand
+              Chittorgarh Fort, which is the largest fort in India and a UNESCO
+              World Heritage Site. The city echoes stories of Rajput bravery,
+              sacrifice, and honor, especially those of legendary figures like
+              Rani Padmini, Maharana Pratap, and Meera Bai. Its ancient palaces,
+              intricately carved temples, and majestic towers like the Vijay
+              Stambh (Victory Tower) stand as proud reminders of its glorious
+              past. Apart from its historical importance, Chittorgarh is also a
+              cultural gem of Rajasthan. The city hosts vibrant fairs and
+              festivals such as the Jauhar Mela and Meera Mahotsav, celebrating
+              its heritage with traditional music, dance, and rituals.
+              Surrounded by scenic landscapes and wildlife sanctuaries like
+              Bassi Sanctuary, Chittorgarh also appeals to nature lovers. With
+              its timeless charm, valorous history, and spiritual aura,
+              Chittorgarh remains a must-visit destination for anyone wanting to
+              experience the royal soul of Rajasthan.
             </p>
           </div>
           {/* <img src="/jaipur/mandal.png" alt="" className="absolute opacity-30 -bottom-40 h-80"/> */}
@@ -106,43 +104,43 @@ const Jaisalmer = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl text-center flex flex-row gap-10 bg-amber-100 border-2 border-yellow-700 justify-center items-center  my-5 rounded-2xl p-10 shadow-lg mb-10">
+        <div className="max-w-7xl text-center flex flex-row gap-10  justify-center items-center  my-5 rounded-2xl p-10  mb-10">
           <img src="/udaipur/udmap.png" alt="" className="h-160" />
 
-          <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10">
+          <div className="flex flex-col justify-center bg-amber-200 border-2 border-yellow-700 rounded-3xl gap-2 items-center p-10">
             <h1 className="text-3xl font-semibold mb-5">
               How to Reach Chittorgarh
             </h1>
             <hr className="bg-black w-full" />
             <div className="flex justify-center items-center gap-4 ">
               <Plane className="h-40 w-40 text-black" />
-              <p>
+              <p className="text-justify">
                 {" "}
-                Maharana Pratap Airport (UDR) is located about 22 km from the
-                city center. It has regular domestic flights from cities like
-                Delhi, Mumbai, Bangalore, Jaipur, and international connections
-                to Dubai, Muscat, and more.{" "}
+                Nearest Airport: Maharana Pratap Airport, Udaipur (about 90 km
+                away). Udaipur is connected to major cities like Delhi, Mumbai,
+                Jaipur, and more. From the airport, you can hire a taxi or take
+                a bus to reach Chittorgarh in about 1.5–2 hours{" "}
               </p>
             </div>
             <hr className="bg-black w-full" />
             <div className="flex justify-center items-center gap-4">
               <RailSymbol className="h-40 w-40 text-black" />
-              <p>
+              <p className="text-justify">
                 {" "}
-                Udaipur Junction is a major railway station on the Indian
-                Railways network. Several express and superfast trains like
-                Mewar Express, Udaipur Express, and Intercity connect Udaipur to
-                Delhi, Agra, Mumbai, Ahmedabad, and other cities.{" "}
+                Chittorgarh Railway Station is well-connected to major cities
+                like Delhi, Udaipur, Jaipur, Mumbai, and Ahmedabad. Frequent
+                trains such as Chetak Express, Mewar Express, and Udaipur City
+                Express run regularly{" "}
               </p>
             </div>
             <hr className="bg-black w-full" />
             <div className="flex justify-center items-center gap-4 ">
               <Bus className="h-40 w-40 text-black" />
-              <p>
+              <p className="text-justify">
                 {" "}
-                Udaipur is well-connected by national highways. Regular buses
-                (including Volvo, deluxe, and sleeper options) run by RSRTC and
-                private operators are available from nearby cities.{" "}
+                chittorgarh is well-connected by national highways. Regular
+                buses (including Volvo, deluxe, and sleeper options) run by
+                RSRTC and private operators are available from nearby cities.{" "}
               </p>
             </div>
           </div>

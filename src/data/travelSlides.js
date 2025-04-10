@@ -21,12 +21,12 @@ export const travelSlides = [
   },
   {
     id: 3,
-    title: "Experience Serenity in Pushkar",
-    location: "Pushkar, Rajasthan",
+    title: "Experience Serenity in Ajmer",
+    location: "Ajmer, Rajasthan",
     description:
-      "Discover the spiritual charm of Pushkar with its sacred lake, vibrant bazaars, ancient temples, and the world-famous Pushkar Camel Fair.",
+      "Discover the spiritual charm of Ajmer with its sacred lake, vibrant bazaars, ancient temples, and the world-famous Pushkar Camel Fair.",
     backgroundImage:
-      "https://plus.unsplash.com/premium_photo-1718570256515-8ff542703621?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1591105567670-7b27d1859b33?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     buttonText: "Explore Now",
   },
   {

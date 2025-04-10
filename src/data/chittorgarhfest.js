@@ -1,23 +1,23 @@
 const chittorgarhfest = [
     {
         id: 1,
-        name: "Jaipur Literature Festival",
-        image: "/jaipur/jf.jpeg",
+        name: "Jauhar Mela",
+        image: "/chittor/c11.jpg",
     },
     {
-        id: 1,
-        name: "Teej Festival",
-        image: "/jaipur/tej.jpg",
+        id: 2,
+        name: "Sanwaliyaji Fair",
+        image: "/chittor/c12.jpg",
     },
     {
-        id: 1,
-        name: "Gangaur Festival",
-        image: "/jaipur/ganf.jpg",
+        id: 3,
+        name: "Meera Bai Festival",
+        image: "/chittor/c13.jpeg",
     },
     {
-        id: 1,
-        name: "Kite Festival",
-        image: "/jaipur/kf.jpg",
+        id: 4,
+        name: "Handicraft Fair",
+        image: "/chittor/c14.jpg",
     },
     ];
     

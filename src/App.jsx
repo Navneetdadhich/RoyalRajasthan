@@ -6,11 +6,11 @@ import Jaipur from "./pages/Jaipur";
 import Jodhpur from "./pages/Jodhpur";
 import Jaisalmer from "./pages/Jaisalmer";
 import Udaipur from "./pages/Udaipur";
-import Kishangarh from "./pages/Kishangarh";
 import Chittorgarh from "./pages/Chittorgarh";
 import Footer from "./components/Footer";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Ajmer from "./pages/Ajmer";
 
 function App() {
  
@@ -36,7 +36,7 @@ const HomeLayout = () => (
           <Route path="jodhpur" element={<Jodhpur />} />
           <Route path="jaisalmer" element={<Jaisalmer />} />
           <Route path="udaipur" element={<Udaipur />} />
-          <Route path="kishangarh" element={<Kishangarh />} />
+          <Route path="ajmer" element={<Ajmer/>} />
           <Route path="chittorgarh" element={<Chittorgarh />} />
         </Route>
         </Routes>
