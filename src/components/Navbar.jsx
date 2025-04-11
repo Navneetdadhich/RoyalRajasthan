@@ -7,10 +7,10 @@ const Navbar = () => {
     <div className="z-50">
       <nav className="navcolor p-4 border-b-4 border-rose-500">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
-          <div className="text-black text-xl font-bold flex items-center justify-center gap-4 p-1">
+          <Link to='/' className="text-black text-xl font-bold flex items-center justify-center gap-4 p-1">
             <img src="/turbanman.png" alt="Turban Man" className="h-15" />
             <h1 className="text-2xl">RoyalTrails</h1>
-          </div>
+          </Link>
           <button
             className="text-black md:hidden flex items-center"
             onClick={() => document.getElementById("menu").classList.toggle("hidden")}

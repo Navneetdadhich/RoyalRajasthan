@@ -106,10 +106,10 @@ const Udaipur = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl text-center flex flex-row gap-10 bg-amber-100 border-2 border-yellow-700 justify-center items-center  my-5 rounded-2xl p-10 shadow-lg mb-10">
+        <div className="max-w-7xl text-center flex flex-row gap-10  justify-center items-center  my-5 rounded-2xl p-10  mb-10">
           <img src="/udaipur/udmap.png" alt="" className="h-160" />
 
-          <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10">
+          <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10 bg-amber-100 border-2 border-yellow-700 shadow-lg">
             <h1 className="text-3xl font-semibold mb-5">
               How to Reach Udaipur
             </h1>

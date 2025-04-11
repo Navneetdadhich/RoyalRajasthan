@@ -107,7 +107,7 @@ const Jaisalmer = () => {
         <div className="max-w-7xl text-center flex flex-row gap-10  justify-center items-center  my-5 rounded-2xl p-10  mb-10">
           <img src="/udaipur/udmap.png" alt="" className="h-160" />
 
-          <div className="flex flex-col justify-center bg-amber-200 border-2 border-yellow-700 rounded-3xl gap-2 items-center p-10">
+          <div className="flex flex-col justify-center bg-yellow-200 border-2 border-yellow-700 rounded-3xl gap-2 items-center p-10">
             <h1 className="text-3xl font-semibold mb-5">
               How to Reach Chittorgarh
             </h1>

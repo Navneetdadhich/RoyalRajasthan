@@ -106,10 +106,10 @@ const Jodhpur = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl text-center flex flex-row gap-10 bg-blue-400 border-2 border-yellow-700 justify-center items-center  my-5 rounded-2xl p-10 shadow-lg">
+        <div className="max-w-7xl text-center flex flex-row gap-10  justify-center items-center  my-5 rounded-2xl p-10 ">
           <img src="/jodhpur/jodhmap.png" alt="" className="h-160" />
 
-          <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10">
+          <div className="flex flex-col justify-center rounded-3xl gap-2 items-center p-10 bg-blue-300 border-2 border-yellow-700 shadow-lg">
             <h1 className="text-3xl font-semibold mb-5">How to Reach Jodhpur</h1>
             <hr className="bg-black w-full" />
             <div className="flex justify-center items-center gap-4 ">
