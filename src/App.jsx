@@ -11,6 +11,11 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Ajmer from "./pages/Ajmer";
+import Desert from "./pages/Desert";
+import Food from "./pages/Food";
+import Culture from "./pages/Culture";
+import Nature from "./pages/Nature";
+import Heritage from "./pages/Heritage";
 
 function App() {
  
@@ -38,6 +43,11 @@ const HomeLayout = () => (
           <Route path="udaipur" element={<Udaipur />} />
           <Route path="ajmer" element={<Ajmer/>} />
           <Route path="chittorgarh" element={<Chittorgarh />} />
+          <Route path="desert" element={<Desert />} />
+          <Route path="food" element={<Food />} />
+          <Route path="nature" element={<Nature />} />
+          <Route path="culture" element={<Culture />} />
+          <Route path="heritage" element={<Heritage />} />
         </Route>
         </Routes>
         

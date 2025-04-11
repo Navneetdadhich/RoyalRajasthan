@@ -573,7 +573,7 @@ const Landing = () => {
 
         <div className="w-full h-2/3 grid grid-cols-6 grid-rows-3 gap-4 p-2">
           {/* 1 */}
-          <div className="col-span-2 row-span-1 bg-green-200 rounded-3xl flex items-center justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer">
+          <Link to="/desert" className="col-span-2 row-span-1 bg-green-200 rounded-3xl flex items-center justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer">
             <img
               src="/ebt/2.jpg"
               alt="Example"
@@ -582,10 +582,10 @@ const Landing = () => {
             <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
               <p className="text-amber-100 text-2xl font-semibold">Desert</p>
             </div>
-          </div>
+          </Link>
 
           {/* 2 */}
-          <div className="col-span-2 row-span-3 bg-blue-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
+          <Link to="/food" className="col-span-2 row-span-3 bg-blue-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
             <img
               src="/ebt/3.jpg"
               alt="Example"
@@ -594,9 +594,9 @@ const Landing = () => {
             <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
               <p className="text-amber-100 text-2xl font-semibold">Food</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
+          <Link to="nature" className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
             <img
               src="/ebt/4.jpg"
               alt="Example"
@@ -605,9 +605,9 @@ const Landing = () => {
             <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
               <p className="text-amber-100 text-2xl font-semibold">Nature</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
+          <Link to="/culture" className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
             <img
               src="/ebt/1.jpg"
               alt="Example"
@@ -616,9 +616,9 @@ const Landing = () => {
             <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
               <p className="text-amber-100 text-2xl font-semibold">Culture</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="col-span-2 row-span-1 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
+          <Link to="/heritage" className="col-span-2 row-span-1 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
             <img
               src="/ebt/5.jpg"
               alt="Example"
@@ -627,7 +627,7 @@ const Landing = () => {
             <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
               <p className="text-amber-100 text-2xl font-semibold">Heritage</p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
