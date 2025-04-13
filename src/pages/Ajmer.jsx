@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Plane, RailSymbol, Bus } from "lucide-react";
 
-import AjmerData from "/src/data/ajmerData.js";
-import Ajmerfest from "/src/data/ajmerfest.js";
+import ajmerData from "/src/data/ajmerData.js";
+import ajmerfest from "/src/data/ajmerfest.js";
 
 const Ajmer = () => {
   const [elements, setElements] = useState(3);
 
-  const sliceData = AjmerData.slice(0, elements);
+  const sliceData = ajmerData.slice(0, elements);
   const handleSeeMore = () => {
     setElements(elements + 3);
   };
@@ -75,7 +75,7 @@ const Ajmer = () => {
               </div>
             ))}
           </div>
-          {elements < AjmerData.length && (
+          {elements < ajmerData.length && (
             <div className="flex justify-center items-center p-10">
               <button
                 onClick={handleSeeMore}
@@ -91,7 +91,7 @@ const Ajmer = () => {
           <h1 className="text-3xl font-semibold mb-10"> FESTIVALS & EVENT</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl lg:grid-cols-2 gap-4 ">
-            {Ajmerfest.map((item, id) => (
+            {ajmerfest.map((item, id) => (
               <div
                 className="flex flex-col justify-center items-center gap-4 rounded-2xl overflow-hidden border-orange-300"
                 key={id}
