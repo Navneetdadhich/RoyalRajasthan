@@ -81,9 +81,9 @@ const TravelSlider = ({ slides, autoPlayInterval = 5000 }) => {
                 <p className="text-white/80 font-medium mb-2">{slide.location}</p>
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{slide.title}</h2>
                 <p className="text-white/90 mb-8 max-w-2xl mx-auto">{slide.description}</p>
-                <button className="slide-button bg-white text-gray-800 px-8 py-3 rounded-full font-medium hover:bg-amber-50 transition-all">
+                {/* <button className="slide-button bg-white text-gray-800 px-8 py-3 rounded-full font-medium hover:bg-amber-50 transition-all">
                   {slide.buttonText}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
