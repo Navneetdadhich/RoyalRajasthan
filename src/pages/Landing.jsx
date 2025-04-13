@@ -41,7 +41,7 @@ const Landing = () => {
     {
       id: 'food',
       title: 'Authentic Food',
-      image: './public/piraj/dbc.jpg',
+      image: './piraj/dbc.jpg',
     },
     {
       id: 'festivals',
