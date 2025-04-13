@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AlignRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,6 +59,18 @@ const Navbar = () => {
             >
               AI Planner
             </Link>
+            <div className="flex items-center gap-4">
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="bg-blue-500 cursor-pointer rounded-full text-white px-4 py-2 border-2 border-black hover:bg-blue-600 transition duration-300">
+                    Sign In
+                  </button>
+                </SignInButton>
+              </SignedOut>
+            </div>
           </div>
         </div>
       </nav>

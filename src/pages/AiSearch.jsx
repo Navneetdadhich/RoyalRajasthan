@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import ItineraryForm from '../components/ItineraryForm';
 import ItineraryResult from '../components/ItineraryResult';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 
 function AiSearch() {

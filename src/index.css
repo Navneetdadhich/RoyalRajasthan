@@ -157,7 +157,6 @@ body{
   animation: fadeIn 0.5s ease-in forwards;
 }
 
-
 .rajasthani-button {
    /* relative font-bold text-center py-2 px-8 
   text-black bg-cream border-2 
@@ -199,4 +198,36 @@ body{
   background-repeat: repeat;
   z-index: 0;
   filter: blur(0.5px);
+}
+
+/* // Add to your existing styles */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Add gradient effect to skeletons */
+.bg-gray-300 {
+  background: linear-gradient(
+    110deg,
+    #ececec 8%,
+    #f5f5f5 18%,
+    #ececec 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
 }
