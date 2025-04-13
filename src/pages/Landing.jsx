@@ -31,58 +31,58 @@ const Landing = () => {
     {
       id: 'palaceOnWheels',
       title: 'Palace on Wheels',
-      image: './public/piraj/pow.jpeg',
+      image: '/piraj/pow.jpeg',
     },
     {
       id: 'museums',
       title: 'Museums',
-      image: './public/piraj/blue.jpg',
+      image: '/piraj/blue.jpg',
     },
     {
       id: 'food',
       title: 'Authentic Food',
-      image: './piraj/dbc.jpg',
+      image: '/piraj/dbc.jpg',
     },
     {
       id: 'festivals',
       title: 'Festivals',
-      image: './public/piraj/tej.jpg',
+      image: '/piraj/tej.jpg',
     },
     {
       id: 'fairs',
       title: 'Fairs',
-      image: './public/piraj/fair.jpg',
+      image: '/piraj/fair.jpg',
     },
     {
       id: 'wildlife',
       title: 'Wildlife',
-      image: './public/piraj/safari.jpg',
+      image: '/piraj/safari.jpg',
     },
     {
       id: 'culturalDance',
       title: 'Cultural Dance',
-      image: './public/piraj/dance.jpg',
+      image: '/piraj/dance.jpg',
     },
     // Duplicating items to create continuous scroll effect
     {
       id: 'palaceOnWheels2',
       title: 'Palace on Wheels',
-      image: './public/piraj/pow.jpeg',
+      image: '/piraj/pow.jpeg',
     },
     {
       id: 'museums2',
       title: 'Museums',
-      image: './public/piraj/blue.jpg',
+      image: '/piraj/blue.jpg',
     },
     {
       id: 'food2',
       title: 'Authentic Food',
-      image: './public/piraj/dbc.jpg',
+      image: '/piraj/dbc.jpg',
     },
     {
       id: 'festivals2',
       title: 'Festivals',
-      image: './public/piraj/tej.jpg',
+      image: '/piraj/tej.jpg',
     },
   ];
   
