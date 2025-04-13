@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router';
 
 const Nature = () => {
   const [activeTab, setActiveTab] = useState('wildlife');
@@ -157,14 +158,7 @@ const Nature = () => {
           >
             Discover the surprising natural beauty of Rajasthan beyond its deserts
           </motion.p>
-          <motion.button 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-lg font-medium transition-all duration-300"
-          >
-            Explore Nature Trails
-          </motion.button>
+          
         </div>
         <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
           <motion.div 
@@ -229,21 +223,21 @@ const Nature = () => {
             viewport={{ once: true }}
             className="w-full md:w-1/2 grid grid-cols-2 gap-4"
           >
-            <div className="col-span-1 row-span-2 overflow-hidden rounded-xl">
+            <div className="col-span-1 row-span-2 overflow-hidden rounded-xl border-2 border-emerald-600">
               <img 
                 src="https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Tiger in Ranthambore" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="col-span-1 overflow-hidden rounded-xl">
+            <div className="col-span-1 overflow-hidden rounded-xl border-2 border-emerald-600">
               <img 
                 src="https://images.unsplash.com/photo-1591694118466-dba7f69c408c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Birds in Bharatpur" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="col-span-1 overflow-hidden rounded-xl">
+            <div className="col-span-1 overflow-hidden rounded-xl border-2 border-emerald-600">
               <img 
                 src="https://images.unsplash.com/photo-1597085097507-9549c0b3049b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Rajasthan Landscape" 
@@ -263,11 +257,11 @@ const Nature = () => {
           </div>
 
           <div className="flex overflow-x-auto scrollbar-hide mb-10 pb-2">
-            <div className="flex space-x-2 mx-auto">
+            <div className="flex space-x-2 mx-auto ">
               {tabs.map(tab => (
                 <button
                   key={tab.id}
-                  className={`px-5 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
+                  className={`border-2 border-emerald-600 px-5 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
                     activeTab === tab.id 
                       ? 'bg-emerald-700 text-white' 
                       : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
@@ -289,7 +283,7 @@ const Nature = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 layout
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-emerald-600"
               >
                 <div className="h-64 overflow-hidden">
                   <img 
@@ -456,7 +450,7 @@ const Nature = () => {
           {/* Tour 1 */}
           <motion.div 
             whileHover={{ y: -10 }}
-            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-emerald-600"
           >
             <div className="h-60 overflow-hidden relative">
               <img 
@@ -487,7 +481,7 @@ const Nature = () => {
           {/* Tour 2 */}
           <motion.div 
             whileHover={{ y: -10 }}
-            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-emerald-600"
           >
             <div className="h-60 overflow-hidden">
               <img 
@@ -515,7 +509,7 @@ const Nature = () => {
           {/* Tour 3 */}
           <motion.div 
             whileHover={{ y: -10 }}
-            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-emerald-600"
           >
             <div className="h-60 overflow-hidden relative">
               <img 
@@ -549,7 +543,7 @@ const Nature = () => {
       <section className="py-20 relative">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1552251520-5ece2c803b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="https://images.unsplash.com/photo-1621427639820-fb18ffbe8a38?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
             alt="Rajasthan Nature" 
             className="w-full h-full object-cover"
           />
@@ -562,9 +556,9 @@ const Nature = () => {
             Plan your nature retreat amid the enchanting landscapes of the desert state and discover a different side of Rajasthan
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-lg font-medium transition-all duration-300 border-white border-2">
+            <Link to="/ai" className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-lg font-medium transition-all duration-300 border-white border-2">
               Plan Your Nature Trip
-            </button>
+            </Link>
            
           </div>
         </div>

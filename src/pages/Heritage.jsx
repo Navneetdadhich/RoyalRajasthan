@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router';
 
 const Heritage = () => {
   const [activeCategory, setActiveCategory] = useState('forts');
@@ -192,9 +193,7 @@ const Heritage = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap gap-4 justify-center"
           >
-            <button className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full text-lg font-medium transition-all duration-300">
-              Explore Heritage Sites
-            </button>
+           
            
           </motion.div>
         </div>
@@ -513,9 +512,9 @@ const Heritage = () => {
             Immerse yourself in centuries of history and architectural splendor with our curated heritage tours
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full text-lg font-medium transition-all duration-300">
+            <Link to="/ai" className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full text-lg font-medium transition-all duration-300">
               Plan Your Heritage Tour
-            </button>
+            </Link>
             
           </div>
         </div>

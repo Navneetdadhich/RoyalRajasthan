@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,25 +20,41 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // Show toast
-    setToastVisible(true);
-    setTimeout(() => setToastVisible(false), 3000);
-    
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    try {
+      await emailjs.send(
+        "service_fb1dtdt", // Replace with your EmailJS Service ID
+        "template_8fgcbew", // Replace with your EmailJS Template ID
+        templateParams,
+        "uioU-gPnd8WOIucAw" // Replace with your EmailJS User ID
+      );
+
+      setToastVisible(true);
+      setTimeout(() => setToastVisible(false), 3000);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      alert("Failed to send the message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-amber-100 to-yeelow-200 py-8 px-4">
       {/* Toast notification */}
       {toastVisible && (
         <div className="fixed top-4 right-4 bg-white p-4 rounded-md shadow-md z-50 border-l-4 border-green-500 flex items-start">

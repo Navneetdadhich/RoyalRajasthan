@@ -9,7 +9,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         <img 
-          src="/public/rajmap.png" 
+          src="/rajmap.png" 
           alt="Rajasthan Map" 
           className="w-full h-full object-cover opacity-35"
         />
@@ -35,7 +35,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="md:w-1/2">
             <img 
-              src="/public/turbanman.png" 
+              src="/turbanman.png" 
               alt="Rajasthani Man with Turban" 
               className="rounded-2xl  w-full object-cover hover:scale-[1.02] transition-transform duration-500"
             />
@@ -86,7 +86,7 @@ const About = () => {
           <div className="group">
             <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
               <img 
-                src="/public/jaipur/tej.jpg" 
+                src="/jaipur/tej.jpg" 
                 alt="Navneet Dadhich" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -102,7 +102,7 @@ const About = () => {
           <div className="group">
             <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
               <img 
-                src="/public/jodhpur/umm.jpg" 
+                src="/jodhpur/umm.jpg" 
                 alt="Nishita" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -118,7 +118,7 @@ const About = () => {
           <div className="group">
             <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
               <img 
-                src="/public/piraj/dance.jpg" 
+                src="/piraj/dance.jpg" 
                 alt="Aditya Goenka" 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
