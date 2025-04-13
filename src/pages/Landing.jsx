@@ -249,7 +249,7 @@ const Landing = () => {
             className="col-span-1 h-56 md:h-64 bg-green-200 rounded-3xl flex items-center justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer"
           >
             <img
-              src="./public/pcity/chitt.jpeg"
+              src="pcity/chitt.jpeg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -270,7 +270,7 @@ const Landing = () => {
           >
             {/* <div className="col-span-3 h-56 md:h-64 bg-blue-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"> */}
             <img
-              src="./public/pcity/hawamahal.jpg"
+              src="pcity/hawamahal.jpg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -292,7 +292,7 @@ const Landing = () => {
             className="col-span-1 sm:col-span-2 md:col-span-1 h-56 md:h-64 bg-red-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
           >
             <img
-              src="./public/pcity/jaisalmer.jpg"
+              src="pcity/jaisalmer.jpg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -309,7 +309,7 @@ const Landing = () => {
             className="col-span-2 h-56 md:h-64 bg-gray-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
           >
             <img
-              src="./public/pcity/1.jpg"
+              src="pcity/1.jpg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -329,7 +329,7 @@ const Landing = () => {
             className="col-span-1 sm:col-span-1 md:col-span-1 h-56 md:h-64 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
           >
             <img
-              src="./public/pcity/jodhpur.jpg"
+              src="pcity/jodhpur.jpg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -345,7 +345,7 @@ const Landing = () => {
             className="col-span-1 sm:col-span-2 md:col-span-2 h-56 md:h-64 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
           >
             <img
-              src="./public/ajmer/a5.jpeg"
+              src="ajmer/a5.jpeg"
               alt="Example"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
