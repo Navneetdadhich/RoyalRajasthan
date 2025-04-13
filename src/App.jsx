@@ -16,6 +16,7 @@ import Food from "./pages/Food";
 import Culture from "./pages/Culture";
 import Nature from "./pages/Nature";
 import Heritage from "./pages/Heritage";
+import AiSearch from "./pages/AiSearch";
 
 function App() {
  
@@ -48,6 +49,7 @@ const HomeLayout = () => (
           <Route path="nature" element={<Nature />} />
           <Route path="culture" element={<Culture />} />
           <Route path="heritage" element={<Heritage />} />
+          <Route path="ai" element={<AiSearch />} />
         </Route>
         </Routes>
         

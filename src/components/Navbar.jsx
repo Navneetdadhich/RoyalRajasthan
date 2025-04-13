@@ -17,6 +17,8 @@ const Navbar = () => {
           >
             <AlignRight className="w-6 h-6" />
           </button>
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <ul
             id="menu"
             className="hidden md:flex text-lg space-x-4 w-full md:w-auto mt-4 md:mt-0"
@@ -38,6 +40,10 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+              <Link to='/ai' className="text-white bg-rose-500 rounded-full font-bold hidden md:flex items-center justify-center py-2 px-4 hover:bg-red-600 transition duration-300 border-2 border-black">
+          Ai Planner
+          </Link>
+          </div>
         </div>
       </nav>
     </div>

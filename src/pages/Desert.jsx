@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Desert = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -39,14 +40,18 @@ const Desert = () => {
           >
             Experience the golden sands and timeless beauty of the Thar Desert
           </motion.p>
-          <motion.button 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-8 px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-full text-lg font-medium transition-all duration-300"
+          <Link
+          to="/ai"
+          >
+          <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-8 px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-full text-lg font-medium transition-all duration-300 cursor-pointer"
           >
             Plan Your Desert Safari
           </motion.button>
+            </Link>
         </div>
         <div className="absolute bottom-10 left-0 right-0 flex justify-center">
           <motion.div 
@@ -83,12 +88,7 @@ const Desert = () => {
               <p className="text-gray-600 mb-4">Experience the golden ripples of sand that extend to the horizon, offering the quintessential desert experience.</p>
               <div className="flex items-center justify-between">
                 <span className="text-yellow-600 font-medium">Jaisalmer</span>
-                <button className="text-yellow-700 hover:text-yellow-800 font-medium flex items-center">
-                  Explore
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
+                
               </div>
             </div>
           </motion.div>
@@ -110,12 +110,7 @@ const Desert = () => {
               <p className="text-gray-600 mb-4">Traverse the desert on the back of the ship of the desert with local guides showing you hidden gems.</p>
               <div className="flex items-center justify-between">
                 <span className="text-yellow-600 font-medium">Multiple Locations</span>
-                <button className="text-yellow-700 hover:text-yellow-800 font-medium flex items-center">
-                  Explore
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
+                
               </div>
             </div>
           </motion.div>
@@ -137,12 +132,7 @@ const Desert = () => {
               <p className="text-gray-600 mb-4">Stay in luxury tents under the starry desert sky with traditional food and cultural performances.</p>
               <div className="flex items-center justify-between">
                 <span className="text-yellow-600 font-medium">Khuri & Osian</span>
-                <button className="text-yellow-700 hover:text-yellow-800 font-medium flex items-center">
-                  Explore
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
+                
               </div>
             </div>
           </motion.div>
@@ -234,15 +224,13 @@ const Desert = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 text-center">Ready for an Unforgettable Desert Adventure?</h2>
           <p className="text-amber-100 text-lg md:text-xl max-w-2xl text-center mb-10">
-            Book your journey through the magical Thar desert now and experience the heart of Rajasthan
+            Plan your journey through the magical Thar desert now and experience the heart of Rajasthan
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-full text-lg font-medium transition-all duration-300">
-              Book Desert Tour
-            </button>
-            <button className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white/10 text-white rounded-full text-lg font-medium transition-all duration-300">
-              Explore Packages
-            </button>
+            <Link to="/ai" className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-full text-lg font-medium transition-all duration-300">
+              Plan Desert Tour
+            </Link>
+            
           </div>
         </div>
       </section>

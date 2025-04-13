@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Hero from "../components/Hero";
 import { Link } from "react-router-dom";
 import DialogBox from "../components/DialogBox";
@@ -23,6 +23,173 @@ const Landing = () => {
     setDialogStates({ ...dialogStates, [dialogName]: false });
   };
 
+  // Create reference for the scroller
+  const scrollerRef = useRef(null);
+  
+  // Define popular items as an array for easier management
+  const popularItems = [
+    {
+      id: 'palaceOnWheels',
+      title: 'Palace on Wheels',
+      image: './public/piraj/pow.jpeg',
+    },
+    {
+      id: 'museums',
+      title: 'Museums',
+      image: './public/piraj/blue.jpg',
+    },
+    {
+      id: 'food',
+      title: 'Authentic Food',
+      image: './public/piraj/dbc.jpg',
+    },
+    {
+      id: 'festivals',
+      title: 'Festivals',
+      image: './public/piraj/tej.jpg',
+    },
+    {
+      id: 'fairs',
+      title: 'Fairs',
+      image: './public/piraj/fair.jpg',
+    },
+    {
+      id: 'wildlife',
+      title: 'Wildlife',
+      image: './public/piraj/safari.jpg',
+    },
+    {
+      id: 'culturalDance',
+      title: 'Cultural Dance',
+      image: './public/piraj/dance.jpg',
+    },
+    // Duplicating items to create continuous scroll effect
+    {
+      id: 'palaceOnWheels2',
+      title: 'Palace on Wheels',
+      image: './public/piraj/pow.jpeg',
+    },
+    {
+      id: 'museums2',
+      title: 'Museums',
+      image: './public/piraj/blue.jpg',
+    },
+    {
+      id: 'food2',
+      title: 'Authentic Food',
+      image: './public/piraj/dbc.jpg',
+    },
+    {
+      id: 'festivals2',
+      title: 'Festivals',
+      image: './public/piraj/tej.jpg',
+    },
+  ];
+  
+  // Auto-scrolling effect
+  useEffect(() => {
+    const scroller1 = scrollerRef.current;
+    let scrollInterval1;
+    
+    if (scroller1) {
+      // Set initial scroll position for first scroller (right-to-left)
+      scroller1.scrollLeft = scroller1.scrollWidth - scroller1.clientWidth;
+      
+      // First scroller: right to left
+      scrollInterval1 = setInterval(() => {
+        if (scroller1.scrollLeft <= 0) {
+          // Reset to right when we reach left edge
+          scroller1.scrollLeft = scroller1.scrollWidth - scroller1.clientWidth;
+        } else {
+          // Move right to left (decrease value)
+          scroller1.scrollLeft -= 1;
+        }
+      }, 20);
+    }
+    
+    // Cleanup interval when component unmounts
+    return () => {
+      if (scrollInterval1) clearInterval(scrollInterval1);
+    };
+  }, []);
+
+  // Add CSS for the scrolling container with faded edges
+  useEffect(() => {
+    // Add a style tag to the document head
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `
+      .scroller-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+      
+      .fade-edge-left,
+      .fade-edge-right {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100px;
+        pointer-events: none;
+        z-index: 2;
+      }
+      
+      .fade-edge-left {
+        left: 0;
+        background: linear-gradient(to right, rgb(254 243 199), rgba(254, 243, 199, 0));
+      }
+      
+      .fade-edge-right {
+        right: 0;
+        background: linear-gradient(to left, rgb(254, 243, 199), rgba(254, 243, 199, 0));
+      }
+      
+      .auto-scroller {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        width: 100%;
+      }
+      
+      .auto-scroller::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .scroller-content {
+        display: flex;
+        gap: 1rem;
+        // padding: 1rem 0;
+      }
+      
+      .scroll-item {
+        flex: 0 0 auto;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .scroll-item:hover {
+        transform: translateY(-8px);
+      }
+      
+      .scroll-item-alt {
+        transform: scale(0.9);
+      }
+      
+      .scroll-item-alt:hover {
+        transform: translateY(-8px) scale(0.9);
+      }
+    `;
+    document.head.appendChild(styleTag);
+    
+    // Cleanup when component unmounts
+    return () => {
+      document.head.removeChild(styleTag);
+    };
+  }, []);
+  
   return (
     <div className=" w-full flex flex-col items-center justify-center z-5">
       <img
@@ -196,373 +363,305 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* second grid */}
-
-      <div className="w-full h-screen max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center gap-10">
+      {/* Popular in Rajasthan - Enhanced scrolling section */}
+      <div className="w-full max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center gap-10">
         <h1 className="text-6xl text-yellow-700 text-bold">
           Popular in Rajasthan
         </h1>
 
-        <div className="w-full h-full grid grid-cols-8 grid-rows-4 gap-4 p-2">
-          {/* 1 - Palace on Wheels */}
-          <div
-            className="col-span-2 row-span-2 bg-green-200 rounded-3xl flex items-center justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer"
-            onClick={() => openDialog('palaceOnWheels')}
-          >
-            <img
-              src="./public/piraj/pow.jpeg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">
-                Palace on wheels
-              </p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.palaceOnWheels}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('palaceOnWheels')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300  shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-
-                  <DialogTitle
-                    as="h3"
-                    className="text-3xl font-semibold text-yellow-400"
-                    >
-                    Place On Wheels
-                  </DialogTitle>
-                  <Button
-                      className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[hover]: data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700 "
-                      onClick={() => closeDialog('palaceOnWheels')}
-                    >
-                      X
-                    </Button>
-                    </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    The Palace on Wheels is a luxury tourist train in India that
-                    offers a regal travel experience through the heart of
-                    Rajasthan and other culturally rich destinations. Launched
-                    in 1982, it is designed to recreate the grandeur of the
-                    personal carriages once used by the Maharajas of India. The
-                    train features beautifully decorated cabins, elegant dining
-                    cars, a lounge, and even a spa, blending heritage charm with
-                    modern comforts. Its itinerary typically includes stops at
-                    iconic locations such as Jaipur, Udaipur, Jodhpur, and Agra,
-                    giving travelers a unique glimpse into India's royal past
-                    while enjoying world-class hospitality on wheels. Each coach
-                    of the Palace on Wheels is named after former princely
-                    states of Rajasthan, such as Alwar, Bikaner, and Jaisalmer,
-                    and is tastefully adorned with local art, handicrafts, and
-                    traditional furnishings, giving passengers a sense of the
-                    region’s cultural richness. The train comprises 14 fully
-                    air-conditioned deluxe coaches, each equipped with modern
-                    amenities like Wi-Fi, attached bathrooms, and personal
-                    attendants, ensuring a comfortable and personalized journey.
-                    Dining on the Palace on Wheels is an experience in itself.
-                    The train houses two lavish restaurants—Maharaja and
-                    Maharani—that serve a mix of Rajasthani, Indian,
-                    Continental, and Chinese cuisines.
-                  </p>
-                  <div className="mt-4">
-                    
-                  </div>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 2 - Museums */}
+        <div className="scroller-container w-full">
+          {/* Faded edges */}
+          <div className="fade-edge-left bg-amber-100"></div>
+          <div className="fade-edge-right"></div>
+          
+          {/* Scrolling content */}
           <div 
-            className="col-span-2 row-span-2 bg-blue-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('museums')}
+            ref={scrollerRef}
+            className="auto-scroller"
           >
-            <img
-              src="./public/piraj/blue.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">Museums</p>
+            <div className="scroller-content">
+              {popularItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="scroll-item w-84 h-80 bg-gradient-to-b from-yellow-100/30 to-amber-200/30 
+                           backdrop-blur-sm border border-yellow-400/30 rounded-3xl flex items-center 
+                           justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer"
+                  onClick={() => {
+                    // Extract the base ID without numbers for dialog opening
+                    const baseId = item.id.replace(/\d+$/, '');
+                    openDialog(baseId);
+                  }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent 
+                                flex flex-col items-center justify-end pb-8 opacity-100 transition-all duration-300">
+                    <p className="text-amber-100 text-3xl font-bold mb-2">
+                      {item.title}
+                    </p>
+                    <p className="text-amber-50/90 text-sm mx-4 text-center opacity-0 group-hover:opacity-100 
+                                transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      Click to explore more
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-
-          <Dialog
-            open={dialogStates.museums}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('museums')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Museums of Rajasthan
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('museums')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Rajasthan's museums are treasure troves preserving the state's royal heritage and vibrant history. The City Palace Museum in Jaipur houses royal garments, weapons, and manuscripts, while the Albert Hall Museum displays Indo-Saracenic architecture with collections spanning art, pottery, and ancient coins. The Mehrangarh Fort Museum in Jodhpur exhibits royal palanquins, cradles, and miniature paintings in one of India's best-preserved forts. These institutions offer visitors an immersive journey through Rajasthan's cultural legacy, from royal opulence to folk traditions.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 3 - Authentic Food */}
-          <div 
-            className="col-span-2 row-span-3 bg-red-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('food')}
-          >
-            <img
-              src="./public/piraj/dbc.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60  flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">
-                Authentic Food
-              </p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.food}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('food')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Authentic Rajasthani Cuisine
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('food')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Rajasthani cuisine is a flavorful reflection of the state's arid landscape and royal heritage. Dishes like Dal Baati Churma (lentils with baked wheat balls and sweet crumble), Gatte ki Sabzi (gram flour dumplings in spicy gravy), and Laal Maas (fiery red meat curry) showcase inventive cooking methods developed to overcome scarce water resources. The region's royal kitchens contributed elaborate preparations like Safed Maas (white meat curry) and Ker Sangri (desert beans and berries). Sweet delicacies such as Ghewar, Mawa Kachori, and various milk-based desserts complete this rich culinary tradition that has evolved over centuries.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 4 - Festivals */}
-          <div 
-            className="col-span-2 row-span-2 bg-gray-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('festivals')}
-          >
-            <img
-              src="./public/piraj/tej.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">Festivals</p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.festivals}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('festivals')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Festivals of Rajasthan
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('festivals')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Rajasthan's festivals are vibrant celebrations that showcase the state's rich cultural heritage and traditions. The Desert Festival in Jaisalmer brings the golden sands to life with camel races, folk performances, and turban-tying competitions. Pushkar's Camel Fair combines a livestock trade event with religious rituals and cultural performances, drawing visitors from around the world. Diwali is celebrated with special grandeur in Jaipur, where the entire Pink City glows with oil lamps and fireworks. Teej celebrates the monsoon season and marital felicity with processions featuring a beautifully adorned image of Goddess Parvati. Gangaur honors Lord Shiva and Goddess Parvati, with women carrying decorated images of the goddess in procession, dressed in their finest attire and jewelry.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 5 - Fairs */}
-          <div 
-            className="col-span-4 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('fairs')}
-          >
-            <img
-              src="./public/piraj/fair.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">Fairs</p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.fairs}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('fairs')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Traditional Fairs of Rajasthan
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('fairs')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Rajasthan's traditional fairs are colorful gatherings that blend commerce, culture, and celebration. The famous Pushkar Camel Fair is a 5-day extravaganza where thousands of camels, horses, and cattle are bought and sold amid folk performances, spiritual rituals at the sacred lake, and vibrant market stalls. The Nagaur Cattle Fair is one of India's largest livestock trading events, featuring bullock races and cockfights alongside the trading activities. Kota's Dussehra Mela features magnificent effigies of Ravana that are ceremoniously burned, along with traditional performances and folk art exhibitions. The Kolayat Fair in Bikaner combines a cattle fair with religious rituals at the sacred Kolayat Lake, where devotees take holy dips and float lamps on the water. These fairs offer an authentic glimpse into Rajasthan's rural life, traditions, and the colorful spirit of its people.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 6 - Wildlife */}
-          <div 
-            className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('wildlife')}
-          >
-            <img
-              src="./public/piraj/safari.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">Wildlife</p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.wildlife}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('wildlife')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Wildlife of Rajasthan
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('wildlife')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Despite its arid landscape, Rajasthan hosts diverse wildlife across its national parks and sanctuaries. Ranthambore National Park, housed within an ancient fort, is famous for its Bengal tigers that can often be spotted amidst historical ruins. Sariska Tiger Reserve offers sightings of leopards, jungle cats, and hyenas, along with the remains of medieval temples. Keoladeo National Park (formerly Bharatpur Bird Sanctuary) is a UNESCO World Heritage site and winter home to thousands of migratory birds, including the rare Siberian crane. Desert National Park showcases unique desert ecology with great Indian bustards, blackbucks, desert foxes, and numerous raptors. The state's conservation efforts have helped preserve endangered species like the Indian wolf, caracal, and gharial, making Rajasthan an important region for wildlife enthusiasts and conservation efforts in India.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
-          {/* 7 - Cultural Dance */}
-          <div 
-            className="col-span-2 row-span-1 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer"
-            onClick={() => openDialog('culturalDance')}
-          >
-            <img
-              src="./public/piraj/dance.jpg"
-              alt="Example"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-100 transition-opacity duration-300">
-              <p className="text-amber-100 text-2xl font-semibold">
-                Cultural Dance
-              </p>
-            </div>
-          </div>
-
-          <Dialog
-            open={dialogStates.culturalDance}
-            as="div"
-            className="relative z-10 focus:outline-none"
-            onClose={() => closeDialog('culturalDance')}
-          >
-            <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4">
-                <DialogPanel
-                  transition
-                  className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-                >
-                  <div className="flex flex-row justify-between items-center">
-                    <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
-                      Cultural Dances of Rajasthan
-                    </DialogTitle>
-                    <Button
-                      className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
-                      onClick={() => closeDialog('culturalDance')}
-                    >
-                      X
-                    </Button>
-                  </div>
-                  <p className="mt-2 text-md text-yellow-200 text-justify">
-                    Rajasthan's folk dances are vibrant expressions of the state's cultural diversity and spirit. The Ghoomar, performed by women in flowing ghagras (skirts), features graceful pirouetting movements and is traditionally associated with the Bhil tribe but was later adopted by Rajput women. Kalbelia, performed by the snake charmer community, mimics serpentine movements with its fluid, swirling black costumes and energetic rhythms, earning UNESCO recognition as an Intangible Cultural Heritage. Kathputli, combining puppetry with dance, tells folkloric stories with intricately crafted marionettes. Chari dance showcases the grace of desert women as they balance brass pots with lit lamps on their heads while performing complex movements. Fire dance (Agni Nritya) originated among the Jasnathis, where performers dance on embers and hold fire in their hands, demonstrating both skill and spiritual devotion. Each dance form reflects specific communities, customs, and historical contexts, making them living museums of Rajasthan's cultural heritage.
-                  </p>
-                </DialogPanel>
-              </div>
-            </div>
-          </Dialog>
-
         </div>
+
+        
       </div>
+      
+      {/* Keep all dialogs as they were */}
+      <Dialog
+        open={dialogStates.palaceOnWheels}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('palaceOnWheels')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300  shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+
+              <DialogTitle
+                as="h3"
+                className="text-3xl font-semibold text-yellow-400"
+                >
+                Place On Wheels
+              </DialogTitle>
+              <Button
+                  className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[hover]: data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700 "
+                  onClick={() => closeDialog('palaceOnWheels')}
+                >
+                  X
+                </Button>
+                </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                The Palace on Wheels is a luxury tourist train in India that
+                offers a regal travel experience through the heart of
+                Rajasthan and other culturally rich destinations. Launched
+                in 1982, it is designed to recreate the grandeur of the
+                personal carriages once used by the Maharajas of India. The
+                train features beautifully decorated cabins, elegant dining
+                cars, a lounge, and even a spa, blending heritage charm with
+                modern comforts. Its itinerary typically includes stops at
+                iconic locations such as Jaipur, Udaipur, Jodhpur, and Agra,
+                giving travelers a unique glimpse into India's royal past
+                while enjoying world-class hospitality on wheels. Each coach
+                of the Palace on Wheels is named after former princely
+                states of Rajasthan, such as Alwar, Bikaner, and Jaisalmer,
+                and is tastefully adorned with local art, handicrafts, and
+                traditional furnishings, giving passengers a sense of the
+                region’s cultural richness. The train comprises 14 fully
+                air-conditioned deluxe coaches, each equipped with modern
+                amenities like Wi-Fi, attached bathrooms, and personal
+                attendants, ensuring a comfortable and personalized journey.
+                Dining on the Palace on Wheels is an experience in itself.
+                The train houses two lavish restaurants—Maharaja and
+                Maharani—that serve a mix of Rajasthani, Indian,
+                Continental, and Chinese cuisines.
+              </p>
+              <div className="mt-4">
+                
+              </div>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.museums}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('museums')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Museums of Rajasthan
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('museums')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Rajasthan's museums are treasure troves preserving the state's royal heritage and vibrant history. The City Palace Museum in Jaipur houses royal garments, weapons, and manuscripts, while the Albert Hall Museum displays Indo-Saracenic architecture with collections spanning art, pottery, and ancient coins. The Mehrangarh Fort Museum in Jodhpur exhibits royal palanquins, cradles, and miniature paintings in one of India's best-preserved forts. These institutions offer visitors an immersive journey through Rajasthan's cultural legacy, from royal opulence to folk traditions.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.food}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('food')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Authentic Rajasthani Cuisine
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('food')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Rajasthani cuisine is a flavorful reflection of the state's arid landscape and royal heritage. Dishes like Dal Baati Churma (lentils with baked wheat balls and sweet crumble), Gatte ki Sabzi (gram flour dumplings in spicy gravy), and Laal Maas (fiery red meat curry) showcase inventive cooking methods developed to overcome scarce water resources. The region's royal kitchens contributed elaborate preparations like Safed Maas (white meat curry) and Ker Sangri (desert beans and berries). Sweet delicacies such as Ghewar, Mawa Kachori, and various milk-based desserts complete this rich culinary tradition that has evolved over centuries.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.festivals}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('festivals')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[350px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Festivals of Rajasthan
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('festivals')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Rajasthan's festivals are vibrant celebrations that showcase the state's rich cultural heritage and traditions. The Desert Festival in Jaisalmer brings the golden sands to life with camel races, folk performances, and turban-tying competitions. Pushkar's Camel Fair combines a livestock trade event with religious rituals and cultural performances, drawing visitors from around the world. Diwali is celebrated with special grandeur in Jaipur, where the entire Pink City glows with oil lamps and fireworks. Teej celebrates the monsoon season and marital felicity with processions featuring a beautifully adorned image of Goddess Parvati. Gangaur honors Lord Shiva and Goddess Parvati, with women carrying decorated images of the goddess in procession, dressed in their finest attire and jewelry.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.fairs}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('fairs')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Traditional Fairs of Rajasthan
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('fairs')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Rajasthan's traditional fairs are colorful gatherings that blend commerce, culture, and celebration. The famous Pushkar Camel Fair is a 5-day extravaganza where thousands of camels, horses, and cattle are bought and sold amid folk performances, spiritual rituals at the sacred lake, and vibrant market stalls. The Nagaur Cattle Fair is one of India's largest livestock trading events, featuring bullock races and cockfights alongside the trading activities. Kota's Dussehra Mela features magnificent effigies of Ravana that are ceremoniously burned, along with traditional performances and folk art exhibitions. The Kolayat Fair in Bikaner combines a cattle fair with religious rituals at the sacred Kolayat Lake, where devotees take holy dips and float lamps on the water. These fairs offer an authentic glimpse into Rajasthan's rural life, traditions, and the colorful spirit of its people.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.wildlife}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('wildlife')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Wildlife of Rajasthan
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('wildlife')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Despite its arid landscape, Rajasthan hosts diverse wildlife across its national parks and sanctuaries. Ranthambore National Park, housed within an ancient fort, is famous for its Bengal tigers that can often be spotted amidst historical ruins. Sariska Tiger Reserve offers sightings of leopards, jungle cats, and hyenas, along with the remains of medieval temples. Keoladeo National Park (formerly Bharatpur Bird Sanctuary) is a UNESCO World Heritage site and winter home to thousands of migratory birds, including the rare Siberian crane. Desert National Park showcases unique desert ecology with great Indian bustards, blackbucks, desert foxes, and numerous raptors. The state's conservation efforts have helped preserve endangered species like the Indian wolf, caracal, and gharial, making Rajasthan an important region for wildlife enthusiasts and conservation efforts in India.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={dialogStates.culturalDance}
+        as="div"
+        className="relative z-10 focus:outline-none"
+        onClose={() => closeDialog('culturalDance')}
+      >
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full md:h-[450px] max-w-[700px] rounded-xl bg-black/30 border border-yellow-300 shadow-lg p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+              <div className="flex flex-row justify-between items-center">
+                <DialogTitle as="h3" className="text-3xl font-semibold text-yellow-400">
+                  Cultural Dances of Rajasthan
+                </DialogTitle>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md py-1.5 px-3 text-lg font-semibold text-white transition cursor-pointer focus:outline-none data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"
+                  onClick={() => closeDialog('culturalDance')}
+                >
+                  X
+                </Button>
+              </div>
+              <p className="mt-2 text-md text-yellow-200 text-justify">
+                Rajasthan's folk dances are vibrant expressions of the state's cultural diversity and spirit. The Ghoomar, performed by women in flowing ghagras (skirts), features graceful pirouetting movements and is traditionally associated with the Bhil tribe but was later adopted by Rajput women. Kalbelia, performed by the snake charmer community, mimics serpentine movements with its fluid, swirling black costumes and energetic rhythms, earning UNESCO recognition as an Intangible Cultural Heritage. Kathputli, combining puppetry with dance, tells folkloric stories with intricately crafted marionettes. Chari dance showcases the grace of desert women as they balance brass pots with lit lamps on their heads while performing complex movements. Fire dance (Agni Nritya) originated among the Jasnathis, where performers dance on embers and hold fire in their hands, demonstrating both skill and spiritual devotion. Each dance form reflects specific communities, customs, and historical contexts, making them living museums of Rajasthan's cultural heritage.
+              </p>
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog>
 
       {/* 3rd grid */}
 
@@ -645,14 +744,14 @@ const Landing = () => {
               </p>
             </div>
 
-            <button
+            <Link to="/ai"
               className="rajasthani-button relative font-bold text-center py-2 px-8 
   text-black bg-rose-200 border-2 border-white
   rounded-full transition-all duration-200
   hover:bg-rose-200/90 hover:shadow-sm active:scale-95 cursor-pointer"
             >
               Plan Your Trip
-            </button>
+            </Link>
           </div>
 
           {/* 2 */}
