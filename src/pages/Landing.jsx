@@ -441,12 +441,14 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center gap-10 z-10 border-2 border-yellow-700 rounded-3xl bg-gradient-to-b from-rose-100/30 to-pink-200/30 backdrop-blur-sm shadow-lg">
+      <div className="relative w-full max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center gap-10 z-10 border-2 border-yellow-700 rounded-3xl bg-gradient-to-b from-rose-100/30 to-pink-200/30 backdrop-blur-sm shadow-lg">
 
         
               <img src="/ai.png" alt=""/>
         
-
+              <button className="rajasthani-button border-0 hover:bg-rose-300 transition duration-300 rounded-full absolute z-50 cursor-pointer -top-25 -right-20">
+                Plan With AI
+              </button>
       </div>
 
 
