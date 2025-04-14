@@ -441,6 +441,15 @@ const Landing = () => {
         </div>
       </div>
 
+      <div className="w-full max-w-7xl mt-20 mb-10 py-4 flex flex-col items-center justify-center gap-10 z-10 border-2 border-yellow-700 rounded-3xl bg-gradient-to-b from-rose-100/30 to-pink-200/30 backdrop-blur-sm shadow-lg">
+
+        
+              <img src="/ai.png" alt=""/>
+        
+
+      </div>
+
+
       {/* Explore by Themes section with skeleton loading */}
       <div className="w-full h-screen max-w-7xl py-4 flex flex-col items-center justify-center gap-10">
         <h1 className="text-6xl text-yellow-700 text-bold">Explore by Themes</h1>
