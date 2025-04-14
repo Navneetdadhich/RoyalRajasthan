@@ -4,8 +4,19 @@ import { Link } from "react-router-dom";
 import DialogBox from "../components/DialogBox";
 import { Dialog, DialogPanel, DialogTitle, Button } from "@headlessui/react";
 import { CityCardSkeleton, PopularItemSkeleton, ThemeCardSkeleton } from "../components/Skeleton";
+import RajasthaniLoader from "../components/RajasthaniLoader";
+import { motion } from "framer-motion";
+import "../styles/loader.css";
+
+const LOADING_TIMES = {
+  initialLoad: 4000,    // 4 seconds for main page load
+  cities: 2000,         // 2 seconds for cities section
+  popular: 2500,        // 2.5 seconds for popular items
+  themes: 3000          // 3 seconds for themes section
+};
 
 const Landing = () => {
+  const [pageLoading, setPageLoading] = useState(true);
   const [dialogStates, setDialogStates] = useState({
     palaceOnWheels: false,
     museums: false,
@@ -89,28 +100,42 @@ const Landing = () => {
 
   // Auto-scrolling effect
   useEffect(() => {
-    const scroller1 = scrollerRef.current;
-    let scrollInterval1;
+    const scroller = scrollerRef.current;
+    let scrollInterval;
+    let isPaused = false;
 
-    if (scroller1) {
-      // Set initial scroll position for first scroller (right-to-left)
-      scroller1.scrollLeft = scroller1.scrollWidth - scroller1.clientWidth;
-
-      // First scroller: right to left
-      scrollInterval1 = setInterval(() => {
-        if (scroller1.scrollLeft <= 0) {
-          // Reset to right when we reach left edge
-          scroller1.scrollLeft = scroller1.scrollWidth - scroller1.clientWidth;
-        } else {
-          // Move right to left (decrease value)
-          scroller1.scrollLeft -= 1;
+    if (scroller) {
+      // Calculate total scroll width
+      const totalWidth = scroller.scrollWidth;
+      const viewWidth = scroller.offsetWidth;
+      let scrollPosition = 0;
+      const scrollSpeed = 1; // Pixels per frame
+      
+      const scroll = () => {
+        if (!isPaused) {
+          scrollPosition += scrollSpeed;
+          
+          // Reset position when reaching the end
+          if (scrollPosition >= totalWidth - viewWidth) {
+            scrollPosition = 0;
+          }
+          
+          scroller.scrollLeft = scrollPosition;
         }
-      }, 20);
+      };
+
+      // Start scrolling animation
+      scrollInterval = setInterval(scroll, 30);
+
+      // Add pause on hover
+      scroller.addEventListener('mouseenter', () => isPaused = true);
+      scroller.addEventListener('mouseleave', () => isPaused = false);
     }
 
-    // Cleanup interval when component unmounts
     return () => {
-      if (scrollInterval1) clearInterval(scrollInterval1);
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
     };
   }, []);
 
@@ -126,61 +151,64 @@ const Landing = () => {
         margin-bottom: 1rem;
       }
       
-      .fade-edge-left,
-      .fade-edge-right {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100px;
-        pointer-events: none;
-        z-index: 2;
-      }
-      
-      .fade-edge-left {
-        left: 0;
-        background: linear-gradient(to right, rgb(254 243 199), rgba(254, 243, 199, 0));
-      }
-      
-      .fade-edge-right {
-        right: 0;
-        background: linear-gradient(to left, rgb(254, 243, 199), rgba(254, 243, 199, 0));
-      }
-      
       .auto-scroller {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-x: hidden;
         width: 100%;
-      }
-      
-      .auto-scroller::-webkit-scrollbar {
-        display: none;
+        scroll-behavior: smooth;
       }
       
       .scroller-content {
         display: flex;
         gap: 1rem;
-        // padding: 1rem 0;
+        padding: 1rem;
+        animation: scroll 50s linear infinite;
       }
+      
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .fade-edge-left,
+    .fade-edge-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .fade-edge-left {
+      left: 0;
+      background: linear-gradient(to right, 
+       rgb(254, 243, 199) 0%,
+        rgba(254, 243, 199, 0) 100%
+      );
+    }
+
+    .fade-edge-right {
+      right: 0;
+      background: linear-gradient(to left, 
+        rgb(254, 243, 199) 0%,
+        rgba(254, 243, 199, 0) 100%
+      );
+    }
       
       .scroll-item {
         flex: 0 0 auto;
+        min-width: 300px; // Fixed width for each item
         border-radius: 1rem;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
       }
       
-      .scroll-item:hover {
-        transform: translateY(-8px);
-      }
-      
-      .scroll-item-alt {
-        transform: scale(0.9);
-      }
-      
-      .scroll-item-alt:hover {
-        transform: translateY(-8px) scale(0.9);
+      // Pause animation on hover
+      .scroller-content:hover {
+        animation-play-state: paused;
       }
     `;
     document.head.appendChild(styleTag);
@@ -198,19 +226,28 @@ const Landing = () => {
 
   // Simulate loading states
   useEffect(() => {
-    // Simulate API calls
+    // Simulate API calls with custom timings
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, LOADING_TIMES.cities);
 
     setTimeout(() => {
       setPopularLoading(false);
-    }, 2500);
+    }, LOADING_TIMES.popular);
 
     setTimeout(() => {
       setThemesLoading(false);
-    }, 3000);
+    }, LOADING_TIMES.themes);
+
+    // Main page load
+    setTimeout(() => {
+      setPageLoading(false);
+    }, LOADING_TIMES.initialLoad);
   }, []);
+
+  if (pageLoading) {
+    return <RajasthaniLoader />;
+  }
 
   return (
     <div className=" w-full flex flex-col items-center justify-center z-5">
@@ -401,41 +438,34 @@ const Landing = () => {
           
           <div ref={scrollerRef} className="auto-scroller">
             <div className="scroller-content">
-              {popularLoading ? (
-                [...Array(11)].map((_, index) => (
-                  <PopularItemSkeleton key={index} />
-                ))
-              ) : (
-                popularItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="scroll-item w-84 h-80 bg-gradient-to-b from-yellow-100/30 to-amber-200/30 
-                             backdrop-blur-sm border border-yellow-400/30 rounded-3xl flex items-center 
-                             justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer"
-                    onClick={() => {
-                      // Extract the base ID without numbers for dialog opening
-                      const baseId = item.id.replace(/\d+$/, '');
-                      openDialog(baseId);
-                    }}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent 
-                                  flex flex-col items-center justify-end pb-8 opacity-100 transition-all duration-300">
-                      <p className="text-amber-100 text-3xl font-bold mb-2">
-                        {item.title}
-                      </p>
-                      <p className="text-amber-50/90 text-sm mx-4 text-center opacity-0 group-hover:opacity-100 
-                                  transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                        Click to explore more
-                      </p>
-                    </div>
+              {!popularLoading && popularItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="scroll-item w-84 h-80 bg-gradient-to-b from-yellow-100/30 to-amber-200/30 
+                            backdrop-blur-sm border border-yellow-400/30 rounded-3xl flex items-center 
+                            justify-center text-xl overflow-hidden font-semibold relative group cursor-pointer"
+                  onClick={() => {
+                    const baseId = item.id.replace(/\d+$/, '');
+                    openDialog(baseId);
+                  }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent 
+                                flex flex-col items-center justify-end pb-8 opacity-100 transition-all duration-300">
+                    <p className="text-amber-100 text-3xl font-bold mb-2">
+                      {item.title}
+                    </p>
+                    <p className="text-amber-50/90 text-sm mx-4 text-center opacity-0 group-hover:opacity-100 
+                                transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      Click to explore more
+                    </p>
                   </div>
-                ))
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -446,9 +476,9 @@ const Landing = () => {
         
               <img src="/ai.png" alt=""/>
         
-              <button className="rajasthani-button border-0 hover:bg-rose-300 transition duration-300 rounded-full absolute z-50 cursor-pointer -top-25 -right-20">
+              <Link to="/ai" className="flex justify-center items-center text-center rajasthani-button border-0 hover:bg-rose-300 transition duration-300 rounded-full absolute z-50 cursor-pointer -top-25 -right-20">
                 Plan With AI
-              </button>
+              </Link>
       </div>
 
 
