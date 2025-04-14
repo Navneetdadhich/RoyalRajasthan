@@ -79,60 +79,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24 px-4 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-amber-800 mb-16 text-center border-b-2 border-amber-400 pb-4 max-w-xs mx-auto">Meet Our Team</h2>
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="group">
-            <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
-              <img 
-                src="/jaipur/tej.jpg" 
-                alt="Navneet Dadhich" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-amber-600/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-amber-800">Navneet Dadhich</h3>
-              <p className="text-rose-600 font-medium">Founder & CTO</p>
-              <p className="text-gray-600 mt-4 leading-relaxed">Descendant of Rajput nobility with encyclopedic knowledge of Rajasthan's history</p>
-            </div>
-          </div>
-          
-          <div className="group">
-            <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
-              <img 
-                src="/jodhpur/umm.jpg" 
-                alt="Nishita" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-amber-600/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-amber-800">Nishita</h3>
-              <p className="text-rose-600 font-medium">Cofounder & CEO</p>
-              <p className="text-gray-600 mt-4 leading-relaxed">Expert in creating immersive cultural experiences and folk art interactions</p>
-            </div>
-          </div>
-          
-          <div className="group">
-            <div className="relative overflow-hidden rounded-full w-56 h-56 mx-auto mb-6">
-              <img 
-                src="/piraj/dance.jpg" 
-                alt="Aditya Goenka" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-amber-600/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-amber-800">Aditya Goenka</h3>
-              <p className="text-rose-600 font-medium">Cofounder & Operational Manager</p>
-              <p className="text-gray-600 mt-4 leading-relaxed">Master of traditional Rajasthani cuisine and royal dining traditions</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-rose-200 to-rose-400 text-white">
         <div className="max-w-4xl mx-auto text-center px-4">
