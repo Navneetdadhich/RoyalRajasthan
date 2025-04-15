@@ -459,10 +459,7 @@ const Landing = () => {
                     <p className="text-amber-100 text-3xl font-bold mb-2">
                       {item.title}
                     </p>
-                    <p className="text-amber-50/90 text-sm mx-4 text-center opacity-0 group-hover:opacity-100 
-                                transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
-                      Click to explore more
-                    </p>
+                    
                   </div>
                 </div>
               ))}
@@ -518,7 +515,7 @@ const Landing = () => {
               </div>
             </Link>
 
-            <Link to="nature" className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
+            <Link to="/nature" className="col-span-2 row-span-2 bg-purple-200 rounded-3xl flex items-center justify-center text-xl font-semibold overflow-hidden relative group cursor-pointer">
               <img
                 src="/ebt/4.jpg"
                 alt="Example"
