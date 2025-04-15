@@ -36,6 +36,8 @@ function AiSearch() {
         5. Must-visit tourist attractions in each city
         6. Local food recommendations
         7. Cultural experiences unique to Rajasthan
+        8. Hotel Recommendations
+        9. Distance and travel time between cities
         
         Format the response in well-organized sections with emoji icons for better readability.
       `;

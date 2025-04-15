@@ -90,8 +90,8 @@ const Contact = () => {
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Our Location</h3>
                 <p className="text-gray-600">
-                  123 Business Avenue<br />
-                  San Francisco, CA 94107
+                  Jaipur road, sikar<br />
+                  Rajasthan (332001), India
                 </p>
               </div>
             </div>
@@ -100,8 +100,8 @@ const Contact = () => {
               <Mail className="text-blue-400 flex-shrink-0 mt-1" size={20} />
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Email Address</h3>
-                <p className="text-gray-600">hello@yourcompany.com</p>
-                <p className="text-gray-600">support@yourcompany.com</p>
+                {/* <p className="text-gray-600">hello@yourcompany.com</p> */}
+                <p className="text-gray-600">support@RoyalTrails.com</p>
               </div>
             </div>
             
