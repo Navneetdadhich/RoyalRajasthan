@@ -72,7 +72,7 @@ const ItineraryForm = ({ onSubmit, loading }) => {
               required
             />
             <p className="text-sm text-gray-500">
-              Range : ₹5,000 - ₹200,000
+              Range : ₹10,000 - ₹200,000
             </p>
           </div>
           
